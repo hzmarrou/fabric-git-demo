@@ -1,0 +1,97 @@
+name: Fabric Deployment Pipeline
+
+on:
+  workflow_dispatch:
+
+env:
+  FABRIC_TENANT_ID: ${{ secrets.FABRIC_TENANT_ID }}
+  FABRIC_CLIENT_ID: ${{ secrets.FABRIC_CLIENT_ID }}
+  FABRIC_CLIENT_SECRET: ${{ secrets.FABRIC_CLIENT_SECRET }}
+  DEPLOYMENT_PIPELINE_NAME: ${{ vars.DEPLOYMENT_PIPELINE_NAME }}
+  DEV_STAGE_NAME: ${{ vars.DEV_STAGE_NAME }}
+  ACC_STAGE_NAME: ${{ vars.ACC_STAGE_NAME }}
+  PROD_STAGE_NAME: ${{ vars.PROD_STAGE_NAME }}
+
+jobs:
+  deploy-acc:
+    name: Deploy to Acc
+    runs-on: windows-latest
+    environment: Acc
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Acquire Fabric token
+        id: get-token
+        shell: pwsh
+        run: |
+          $body = @{
+            client_id     = "${{ secrets.FABRIC_CLIENT_ID }}"
+            client_secret = "${{ secrets.FABRIC_CLIENT_SECRET }}"
+            scope         = "https://api.fabric.microsoft.com/.default"
+            grant_type    = "client_credentials"
+          }
+          $resp = Invoke-RestMethod `
+            -Uri "https://login.microsoftonline.com/${{ secrets.FABRIC_TENANT_ID }}/oauth2/v2.0/token" `
+            -Method POST `
+            -Body $body `
+            -ContentType "application/x-www-form-urlencoded"
+
+          if (-not $resp.access_token) {
+            throw "Failed to acquire Fabric token"
+          }
+
+          echo "token=$($resp.access_token)" >> $env:GITHUB_OUTPUT
+
+      - name: Deploy Dev to Acc
+        shell: pwsh
+        env:
+          FABRIC_TOKEN: ${{ steps.get-token.outputs.token }}
+        run: |
+          & ./scripts/DeploymentPipelines-DeployAll.ps1 `
+            -deploymentPipelineName "${{ vars.DEPLOYMENT_PIPELINE_NAME }}" `
+            -sourceStageName "${{ vars.DEV_STAGE_NAME }}" `
+            -targetStageName "${{ vars.ACC_STAGE_NAME }}" `
+            -deploymentNote "Automated deploy Dev to Acc"
+
+  deploy-prod:
+    name: Deploy to Prod
+    needs: deploy-acc
+    runs-on: windows-latest
+    environment: Prod
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Acquire Fabric token
+        id: get-token
+        shell: pwsh
+        run: |
+          $body = @{
+            client_id     = "${{ secrets.FABRIC_CLIENT_ID }}"
+            client_secret = "${{ secrets.FABRIC_CLIENT_SECRET }}"
+            scope         = "https://api.fabric.microsoft.com/.default"
+            grant_type    = "client_credentials"
+          }
+          $resp = Invoke-RestMethod `
+            -Uri "https://login.microsoftonline.com/${{ secrets.FABRIC_TENANT_ID }}/oauth2/v2.0/token" `
+            -Method POST `
+            -Body $body `
+            -ContentType "application/x-www-form-urlencoded"
+
+          if (-not $resp.access_token) {
+            throw "Failed to acquire Fabric token"
+          }
+
+          echo "token=$($resp.access_token)" >> $env:GITHUB_OUTPUT
+
+      - name: Deploy Acc to Prod
+        shell: pwsh
+        env:
+          FABRIC_TOKEN: ${{ steps.get-token.outputs.token }}
+        run: |
+          & ./scripts/DeploymentPipelines-DeployAll.ps1 `
+            -deploymentPipelineName "${{ vars.DEPLOYMENT_PIPELINE_NAME }}" `
+            -sourceStageName "${{ vars.ACC_STAGE_NAME }}" `
+            -targetStageName "${{ vars.PROD_STAGE_NAME }}" `
+            -deploymentNote "Automated deploy Acc to Prod"
