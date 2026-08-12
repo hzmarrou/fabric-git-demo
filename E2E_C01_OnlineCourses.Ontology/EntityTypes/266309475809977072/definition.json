@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "266309475809977072",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "Enrollment",
+  "entityIdParts": [
+    "131024467317728081"
+  ],
+  "displayNamePropertyId": "131024467317728081",
+  "namespaceType": "Custom",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "131024467317728081",
+      "name": "EnrollmentID",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "835544660888420235",
+      "name": "StudentID",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "600107481871578348",
+      "name": "CourseID",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "510540917691844267",
+      "name": "enrolledDate",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "DateTime"
+    }
+  ],
+  "timeseriesProperties": [],
+  "untypedProperties": []
+}

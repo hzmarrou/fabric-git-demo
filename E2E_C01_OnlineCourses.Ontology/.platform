@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Ontology",
+    "displayName": "E2E_C01_OnlineCourses",
+    "description": "Online course platform - tests 1:N chains, M:N via junction entity, and platform publishing"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "580cba5e-8856-bd0c-48fb-0989bf37ad0f"
+  }
+}

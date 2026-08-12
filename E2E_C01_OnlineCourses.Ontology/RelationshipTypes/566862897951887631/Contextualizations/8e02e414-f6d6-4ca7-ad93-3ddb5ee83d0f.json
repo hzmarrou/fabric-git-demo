@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "8e02e414-f6d6-4ca7-ad93-3ddb5ee83d0f",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b2155c2a-a0a0-95ef-404a-2cd56caea328",
+    "sourceTableName": "e2e_c01_enrollment",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "EnrollmentID",
+      "targetPropertyId": "131024467317728081"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "CourseID",
+      "targetPropertyId": "234529868797969022"
+    }
+  ]
+}

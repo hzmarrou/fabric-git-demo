@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "0aa22b22-2605-44b5-a287-c1970b965471",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "EnrollmentID",
+        "targetPropertyId": "131024467317728081"
+      },
+      {
+        "sourceColumnName": "StudentID",
+        "targetPropertyId": "835544660888420235"
+      },
+      {
+        "sourceColumnName": "CourseID",
+        "targetPropertyId": "600107481871578348"
+      },
+      {
+        "sourceColumnName": "enrolledDate",
+        "targetPropertyId": "510540917691844267"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b2155c2a-a0a0-95ef-404a-2cd56caea328",
+      "sourceTableName": "e2e_c01_enrollment",
+      "sourceSchema": "dbo"
+    }
+  }
+}

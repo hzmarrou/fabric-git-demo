@@ -1,0 +1,23 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/contextualization/1.0.0/schema.json",
+  "id": "526aec01-80c7-42da-acfc-031264f61ec5",
+  "dataBindingTable": {
+    "workspaceId": "00000000-0000-0000-0000-000000000000",
+    "itemId": "b2155c2a-a0a0-95ef-404a-2cd56caea328",
+    "sourceTableName": "e2e_c01_module",
+    "sourceSchema": "dbo",
+    "sourceType": "LakehouseTable"
+  },
+  "sourceKeyRefBindings": [
+    {
+      "sourceColumnName": "CourseID",
+      "targetPropertyId": "234529868797969022"
+    }
+  ],
+  "targetKeyRefBindings": [
+    {
+      "sourceColumnName": "ModuleID",
+      "targetPropertyId": "68379698015712707"
+    }
+  ]
+}

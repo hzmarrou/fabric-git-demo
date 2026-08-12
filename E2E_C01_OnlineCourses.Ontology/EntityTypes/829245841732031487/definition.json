@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "829245841732031487",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "CoursePlatform",
+  "entityIdParts": [
+    "257183227483113159"
+  ],
+  "displayNamePropertyId": "257183227483113159",
+  "namespaceType": "Custom",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "257183227483113159",
+      "name": "PlatformID",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "303591735801631853",
+      "name": "name",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "273387430985306293",
+      "name": "url",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    }
+  ],
+  "timeseriesProperties": [],
+  "untypedProperties": []
+}

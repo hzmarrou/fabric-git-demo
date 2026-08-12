@@ -1,0 +1,28 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "f2abdd58-f871-44cd-81cf-436fa2f4eca1",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "StudentID",
+        "targetPropertyId": "12517819015041389"
+      },
+      {
+        "sourceColumnName": "name",
+        "targetPropertyId": "577281355608326627"
+      },
+      {
+        "sourceColumnName": "email",
+        "targetPropertyId": "718569829043696216"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b2155c2a-a0a0-95ef-404a-2cd56caea328",
+      "sourceTableName": "e2e_c01_student",
+      "sourceSchema": "dbo"
+    }
+  }
+}

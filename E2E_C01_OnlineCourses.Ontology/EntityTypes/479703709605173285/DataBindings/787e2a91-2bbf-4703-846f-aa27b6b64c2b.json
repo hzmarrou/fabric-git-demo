@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "787e2a91-2bbf-4703-846f-aa27b6b64c2b",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "InstructorID",
+        "targetPropertyId": "965289541023765175"
+      },
+      {
+        "sourceColumnName": "name",
+        "targetPropertyId": "173449181148565750"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b2155c2a-a0a0-95ef-404a-2cd56caea328",
+      "sourceTableName": "e2e_c01_instructor",
+      "sourceSchema": "dbo"
+    }
+  }
+}

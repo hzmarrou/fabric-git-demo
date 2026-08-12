@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataAgent",
+    "displayName": "OntologyAgent",
+    "description": "Ontology-grounded data agent for semantic reasoning."
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "859b70b1-61cf-aa7f-4de0-94aa31183dae"
+  }
+}

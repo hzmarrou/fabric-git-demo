@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/entityType/1.0.0/schema.json",
+  "id": "479703709605173285",
+  "namespace": "usertypes",
+  "baseEntityTypeId": null,
+  "name": "Instructor",
+  "entityIdParts": [
+    "965289541023765175"
+  ],
+  "displayNamePropertyId": "965289541023765175",
+  "namespaceType": "Custom",
+  "visibility": "Visible",
+  "properties": [
+    {
+      "id": "965289541023765175",
+      "name": "InstructorID",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    },
+    {
+      "id": "173449181148565750",
+      "name": "name",
+      "redefines": null,
+      "baseTypeNamespaceType": null,
+      "valueType": "String"
+    }
+  ],
+  "timeseriesProperties": [],
+  "untypedProperties": []
+}

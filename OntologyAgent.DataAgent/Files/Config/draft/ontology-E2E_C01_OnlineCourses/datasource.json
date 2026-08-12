@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/dataAgent/definition/dataSource/1.0.0/schema.json",
+  "artifactId": "580cba5e-8856-bd0c-48fb-0989bf37ad0f",
+  "workspaceId": "00000000-0000-0000-0000-000000000000",
+  "dataSourceInstructions": "Prefer ontology relationships for traversals and disambiguation. Use Enrollment as the bridge between Student and Course.",
+  "displayName": "E2E_C01_OnlineCourses",
+  "type": "ontology",
+  "userDescription": "Ontology source for semantic relationship grounding.",
+  "metadata": null,
+  "elements": [
+    {
+      "id": "Course",
+      "is_selected": true,
+      "display_name": "Course",
+      "type": "ontology.entity",
+      "description": "CourseID,title,topic,InstructorID,PlatformID",
+      "children": []
+    },
+    {
+      "id": "CoursePlatform",
+      "is_selected": true,
+      "display_name": "CoursePlatform",
+      "type": "ontology.entity",
+      "description": "PlatformID,name,url",
+      "children": []
+    },
+    {
+      "id": "Enrollment",
+      "is_selected": true,
+      "display_name": "Enrollment",
+      "type": "ontology.entity",
+      "description": "EnrollmentID,StudentID,CourseID,enrolledDate",
+      "children": []
+    },
+    {
+      "id": "Instructor",
+      "is_selected": true,
+      "display_name": "Instructor",
+      "type": "ontology.entity",
+      "description": "InstructorID,name",
+      "children": []
+    },
+    {
+      "id": "Module",
+      "is_selected": true,
+      "display_name": "Module",
+      "type": "ontology.entity",
+      "description": "ModuleID,title,orderNum,CourseID",
+      "children": []
+    },
+    {
+      "id": "Student",
+      "is_selected": true,
+      "display_name": "Student",
+      "type": "ontology.entity",
+      "description": "StudentID,name,email",
+      "children": []
+    }
+  ]
+}

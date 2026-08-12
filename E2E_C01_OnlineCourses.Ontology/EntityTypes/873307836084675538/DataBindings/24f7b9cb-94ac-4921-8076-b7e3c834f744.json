@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "24f7b9cb-94ac-4921-8076-b7e3c834f744",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "ModuleID",
+        "targetPropertyId": "68379698015712707"
+      },
+      {
+        "sourceColumnName": "title",
+        "targetPropertyId": "960644715067386210"
+      },
+      {
+        "sourceColumnName": "orderNum",
+        "targetPropertyId": "716284620602093561"
+      },
+      {
+        "sourceColumnName": "CourseID",
+        "targetPropertyId": "886767402543081807"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "b2155c2a-a0a0-95ef-404a-2cd56caea328",
+      "sourceTableName": "e2e_c01_module",
+      "sourceSchema": "dbo"
+    }
+  }
+}
