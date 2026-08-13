@@ -36,7 +36,7 @@ customers = (
     .csv(input_path)
 )
 
-france_customers = customers.filter(F.col("country") == "Spain")
+france_customers = customers.filter(F.col("country") == "France")
 
 (
     france_customers.write
